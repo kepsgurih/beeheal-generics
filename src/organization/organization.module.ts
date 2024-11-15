@@ -13,8 +13,8 @@ import { RolesGuard } from 'src/common/guard/roles.guard';
   controllers: [OrganizationController],
   providers: [OrganizationService,
     {
-      provide: 'REQUIRED_ROLES',  // Menyediakan 'REQUIRED_ROLES' untuk dependency injection
-      useValue: ['admin', 'stakeholder'],  // Nilai yang ingin Anda injeksikan
+      provide: 'REQUIRED_ROLES',
+      useValue: ['admin', 'stakeholder'],
     },
     RolesGuard,
     MongoConnectionService]
