@@ -18,4 +18,4 @@ jobs:
       - name: Build Project
         run: pnpm build
       - name: Deploy to Vercel (Development)
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --prod=false --domains abc-beta.vercel.app
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --prod=false --domains beeheal-generics-dev.vercel.app
