@@ -1,0 +1,21 @@
+name: Vercel Development Deployment
+env:
+  VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+on:
+  push:
+    branches:
+      - development/*
+jobs:
+  Deploy-Development:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build Project
+        run: pnpm build
+      - name: Deploy to Vercel (Development)
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --prod=false --domains abc-beta.vercel.app
